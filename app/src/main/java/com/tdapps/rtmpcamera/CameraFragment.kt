@@ -1,6 +1,7 @@
 package com.tdapps.rtmpcamera
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,7 +44,7 @@ class CameraFragment : Fragment() {
     }
 
     private fun startPublishing() {
-        val url = args.streamUrl ?: "rtmp://10.243.201.170:1935/live/streamkey"
+        val url = args.streamUrl.toString()
         val nodePublisher = NodePublisher(requireContext(), "")
         nodePublisher.apply {
             attachView(binding.publishingLayout)
